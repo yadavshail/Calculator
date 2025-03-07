@@ -97,9 +97,9 @@
           document.querySelector('#display').value = current_display;"/>
 
           <input type="button" class="button math_button" value="="
-          onclick="try { current_display = eval(current_display.replace(/÷/g, '/')); 
-          document.querySelector('#display').value = current_display; }
-          catch (e) { document.querySelector('#display').value = 'Error'; }"/>
+          onclick="try { current_display = eval(current_display.replace(/÷/g, '/').replace(/x/g, '*')); 
+          document.querySelector('#display').value = current_display; } 
+          catch (e) { document.querySelector('#display').value = 'Error'; }" />
 
         </div>
       </div>
