@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <input type="text" id="display" readonly />
+
+        <div class="button_container">
+          <input type="button" class="button clear_button" value="C" 
+          onclick= "current_display = '';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button math_button" value="%" 
+          onclick="current_display = eval(current_display) / 100; 
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button math_button" value="x²"
+          onclick="current_display = Math.pow(eval(current_display), 2); 
+          document.querySelector('#display').value = current_display;" />
+
+          <input type="button" class="button math_button" value="+" 
+          onclick="current_display += '+'; 
+          document.querySelector('#display').value = current_display;"/>
+
+          <br />
+
+          <input type="button" class="button digit_button" value="7" 
+          onclick="current_display += '7';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button digit_button" value="8" 
+          onclick="current_display += '8';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button digit_button" value="9" 
+          onclick="current_display += '9';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button math_button" value="–" 
+          onclick="current_display += '-';
+          document.querySelector('#display').value = current_display;"/>
+
+          <br />
+
+          <input type="button" class="button digit_button" value="4" 
+          onclick="current_display += '4';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button digit_button" value="5" 
+          onclick="current_display += '5';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button digit_button" value="6" 
+          onclick="current_display += '6';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button math_button" value="x" 
+          onclick="current_display += '*';
+          document.querySelector('#display').value = current_display;"/>
+
+          <br />
+
+          <input type="button" class="button digit_button" value="1"
+          onclick="current_display += '1'; 
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button digit_button" value="2" 
+          onclick="current_display += '2';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button digit_button" value="3" 
+          onclick="current_display += '3';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button math_button" value="÷" 
+          onclick="current_display += '÷';
+          document.querySelector('#display').value = current_display;"/>
+
+          <br />
+
+          <input type="button" class="button digit_button" value="00" 
+          onclick="current_display += '00';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button digit_button" value="0" 
+          onclick="current_display += '0';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button digit_button" value="." 
+          onclick="current_display += '.';
+          document.querySelector('#display').value = current_display;"/>
+
+          <input type="button" class="button math_button" value="="
+          onclick="try { current_display = eval(current_display.replace(/÷/g, '/')); 
+          document.querySelector('#display').value = current_display; }
+          catch (e) { document.querySelector('#display').value = 'Error'; }"/>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let current_display = "";
+      document.querySelector('#display').value = current_display;
+    </script>
+  </body>
+</html>
